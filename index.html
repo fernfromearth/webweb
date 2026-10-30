@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DIVIZTY | Student Election</title>
+    <title>DIVIZTY | Student Council</title>
     <meta
       name="description"
-      content="DIVIZTY student election homepage with a playful, colorful campaign aesthetic."
+      content="DIVIZTY is a modern student council website for announcements, events, candidate information, feedback, and admin tools."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -20,17 +20,24 @@
     <div class="page-shell">
       <header class="site-header">
         <div class="container nav-shell">
-          <div class="brand" aria-label="DIVIZTY home">
+          <a href="#home" class="brand" aria-label="DIVIZTY home">
             <span class="brand-mark">D</span>
             <span>DIVIZTY</span>
-          </div>
+          </a>
+
+          <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
 
           <nav class="main-nav" aria-label="Main navigation">
             <a href="#home">Home</a>
-            <a href="#policy">Policy</a>
+            <a href="#announcements">Announcements</a>
+            <a href="#events">Events</a>
             <a href="#candidates">Candidates</a>
-            <a href="#profile">Profile</a>
-            <a href="#contact">Contact</a>
+            <a href="#voice">Student Voice</a>
+            <a href="#admin">Admin</a>
           </nav>
         </div>
       </header>
@@ -39,128 +46,242 @@
         <section class="hero section-space">
           <div class="container hero-grid">
             <div class="hero-copy reveal">
-              <span class="eyebrow">Student Election 2026</span>
+              <span class="eyebrow">Student Council 2026</span>
               <h1>DIVIZTY</h1>
               <p class="lead">
-                Building a brighter campus where ideas grow, voices are heard,
-                and every student feels represented.
+                Building a campus where student life is more connected, more visible,
+                and more joyful through collaboration, trust, and action.
               </p>
 
               <div class="hero-actions">
-                <button type="button" class="primary-btn">Go to Game</button>
-                <button type="button" class="secondary-btn">See Policy</button>
+                <a class="primary-btn" href="#announcements">Latest Updates</a>
+                <a class="secondary-btn" href="#candidates">Meet Candidates</a>
               </div>
 
-              <div class="stats-row" aria-label="Campaign statistics">
-                <div class="stat-card">
-                  <strong>8.5k</strong>
-                  <span>Supporters</span>
+              <div class="stats-row" aria-label="Council statistics">
+                <div class="stat-card purple">
+                  <strong>8.5K</strong>
+                  <span>Students reached</span>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card blue">
                   <strong>24</strong>
-                  <span>Policy Ideas</span>
+                  <span>Active initiatives</span>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card lime">
                   <strong>100%</strong>
                   <span>Student-first</span>
                 </div>
               </div>
             </div>
 
-            <div class="hero-art reveal" aria-label="Decorative campaign artwork">
+            <div class="hero-art reveal" aria-label="Campaign illustration">
               <div class="floating-dot dot-one"></div>
               <div class="floating-dot dot-two"></div>
               <div class="floating-dot dot-three"></div>
               <div class="blob blob-a"></div>
               <div class="blob blob-b"></div>
 
-              <div class="figure-wrap">
-                <div class="figure-head"></div>
-                <div class="figure-body"></div>
-                <div class="spark spark-a"></div>
-                <div class="spark spark-b"></div>
-                <div class="spark spark-c"></div>
+              <div class="hero-panel">
+                <div class="mini-badge">TOP PRIORITY</div>
+                <div class="hero-panel-figure">
+                  <div class="figure-head"></div>
+                  <div class="figure-body"></div>
+                </div>
+                <div class="hero-panel-copy">
+                  <span class="panel-label">Campaign score</span>
+                  <strong>96%</strong>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section class="policy section-space" id="policy">
+        <section class="showcase section-space" id="announcements">
           <div class="container">
             <div class="section-head reveal">
-              <span class="eyebrow eyebrow-soft">Policy Focus</span>
-              <h2>Ideas that make campus life better.</h2>
+              <span class="eyebrow light">Announcements</span>
+              <h2>Latest updates from campus.</h2>
             </div>
 
-            <div class="policy-grid">
-              <article class="policy-card purple reveal">
-                <div class="card-icon">✦</div>
-                <h3>Campus Life</h3>
+            <div class="announcement-tools reveal">
+              <div class="filter-bar" role="tablist" aria-label="Announcement filters">
+                <button class="filter-chip active" type="button" data-filter="all">All</button>
+                <button class="filter-chip" type="button" data-filter="event">Events</button>
+                <button class="filter-chip" type="button" data-filter="academic">Academic</button>
+                <button class="filter-chip" type="button" data-filter="campus">Campus</button>
+              </div>
+              <label class="search-wrap" aria-label="Search announcements">
+                <input id="announcementSearch" type="search" placeholder="Search announcements" />
+              </label>
+            </div>
+
+            <div class="announcement-grid">
+              <article class="announcement-card reveal" data-category="event" data-title="Welcome Fair 2026">
+                <div class="card-tag event">Event</div>
+                <div class="announcement-date">12 Oct 2026</div>
+                <h3>Welcome Fair 2026</h3>
                 <p>
-                  More student-led spaces, exciting events, and activities that
-                  bring everyone together.
+                  Join the student community fair for club showcases, campus tours, and
+                  first-year welcome activities.
                 </p>
+                <button type="button" class="text-link read-more" data-title="Welcome Fair 2026" data-body="Join the student community fair for club showcases, campus tours, and first-year welcome activities. Students can explore clubs, meet committee leaders, and participate in interactive workshops designed to help new arrivals settle in comfortably.">Read more</button>
               </article>
 
-              <article class="policy-card pink reveal">
-                <div class="card-icon">◎</div>
-                <h3>Wellbeing</h3>
+              <article class="announcement-card reveal" data-category="academic" data-title="Midterm Support Week">
+                <div class="card-tag academic">Academic</div>
+                <div class="announcement-date">15 Oct 2026</div>
+                <h3>Midterm Support Week</h3>
                 <p>
-                  A healthier student experience with wellness support,
-                  mindfulness, and mental health access.
+                  Peer tutoring, revision workshops, and office-hour guidance will be
+                  available across faculties this week.
                 </p>
+                <button type="button" class="text-link read-more" data-title="Midterm Support Week" data-body="Peer tutoring, revision workshops, and office-hour guidance will be available across faculties this week. Students can book mentor sessions and attend subject-based review workshops selected for high-demand courses.">Read more</button>
               </article>
 
-              <article class="policy-card cyan reveal">
-                <div class="card-icon">◌</div>
-                <h3>Innovation</h3>
+              <article class="announcement-card reveal" data-category="campus" data-title="Cafeteria Feedback Survey">
+                <div class="card-tag campus">Campus</div>
+                <div class="announcement-date">18 Oct 2026</div>
+                <h3>Cafeteria Feedback Survey</h3>
                 <p>
-                  Building creative opportunities, startup support, and projects
-                  that grow student talent.
+                  Share your feedback on food quality, seating comfort, and service timing.
+                  The council is reviewing changes for the next semester.
                 </p>
+                <button type="button" class="text-link read-more" data-title="Cafeteria Feedback Survey" data-body="Share your feedback on food quality, seating comfort, and service timing. The council is reviewing changes for the next semester to improve convenience, nutrition, and general comfort for students.">Read more</button>
               </article>
 
-              <article class="policy-card yellow reveal">
-                <div class="card-icon">✧</div>
-                <h3>Learning</h3>
+              <article class="announcement-card reveal" data-category="event" data-title="Leadership Mixer Night">
+                <div class="card-tag event">Event</div>
+                <div class="announcement-date">24 Oct 2026</div>
+                <h3>Leadership Mixer Night</h3>
                 <p>
-                  Smarter academic support, mentorship, and flexible resources
-                  for every learner.
+                  Student leaders, committees, and clubs will meet in an informal networking
+                  evening to discuss future collaboration.
                 </p>
+                <button type="button" class="text-link read-more" data-title="Leadership Mixer Night" data-body="Student leaders, committees, and clubs will meet in an informal networking evening to discuss future collaboration. This session will focus on shared goals, volunteer roles, and cross-campus opportunities for the next academic cycle.">Read more</button>
               </article>
             </div>
+
+            <aside class="detail-panel reveal" aria-live="polite">
+              <div class="detail-header">
+                <span class="eyebrow light">Announcement</span>
+                <button type="button" class="close-detail" aria-label="Close announcement detail">×</button>
+              </div>
+              <h3 id="detailTitle">Welcome Fair 2026</h3>
+              <p id="detailBody">
+                Join the student community fair for club showcases, campus tours, and first-year welcome activities.
+              </p>
+            </aside>
           </div>
         </section>
 
-        <section class="featured-policy section-space">
-          <div class="container feature-shell reveal">
-            <div class="feature-copy">
-              <span class="eyebrow eyebrow-soft">Featured Policy</span>
-              <h2>Creative campus, connected students.</h2>
-              <p>
-                We want a student life that feels alive, welcoming, and full of
-                opportunities for ideas to turn into action.
-              </p>
-              <ul class="feature-list">
-                <li>Student wellbeing programmes</li>
-                <li>More social and creative events</li>
-                <li>Greater access to campus support</li>
-              </ul>
+        <section class="events section-space" id="events">
+          <div class="container">
+            <div class="section-head reveal">
+              <span class="eyebrow light">Events & Calendar</span>
+              <h2>Upcoming activities.</h2>
             </div>
 
-            <div class="feature-visual" aria-label="Decorative policy illustration">
-              <div class="mini-panel panel-one"></div>
-              <div class="mini-panel panel-two"></div>
-              <div class="mini-panel panel-three"></div>
+            <div class="events-grid">
+              <div class="event-card reveal highlight">
+                <div class="event-date">
+                  <span class="month">OCT</span>
+                  <span class="day">12</span>
+                </div>
+                <div class="event-copy">
+                  <span class="event-type">Campus Event</span>
+                  <h3>Welcome Fair 2026</h3>
+                  <p>Student clubs, campus booths, and collaborative workshops.</p>
+                </div>
+              </div>
+
+              <div class="event-card reveal">
+                <div class="event-date">
+                  <span class="month">OCT</span>
+                  <span class="day">19</span>
+                </div>
+                <div class="event-copy">
+                  <span class="event-type">Workshop</span>
+                  <h3>Career Tips Lab</h3>
+                  <p>Practical career planning and networking support for students.</p>
+                </div>
+              </div>
+
+              <div class="event-card reveal">
+                <div class="event-date">
+                  <span class="month">NOV</span>
+                  <span class="day">02</span>
+                </div>
+                <div class="event-copy">
+                  <span class="event-type">Leadership</span>
+                  <h3>Student Forum</h3>
+                  <p>Open discussions on policy updates, student concerns, and ideas.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="calendar-wrap reveal">
+              <div class="calendar-header">
+                <h3>Monthly calendar</h3>
+                <span>October 2026</span>
+              </div>
+              <div class="calendar-grid" aria-label="October 2026 calendar">
+                <span>Mon</span>
+                <span>Tue</span>
+                <span>Wed</span>
+                <span>Thu</span>
+                <span>Fri</span>
+                <span>Sat</span>
+                <span>Sun</span>
+
+                <button type="button" class="calendar-day muted">28</button>
+                <button type="button" class="calendar-day muted">29</button>
+                <button type="button" class="calendar-day muted">30</button>
+                <button type="button" class="calendar-day">1</button>
+                <button type="button" class="calendar-day">2</button>
+                <button type="button" class="calendar-day">3</button>
+                <button type="button" class="calendar-day">4</button>
+
+                <button type="button" class="calendar-day">5</button>
+                <button type="button" class="calendar-day">6</button>
+                <button type="button" class="calendar-day">7</button>
+                <button type="button" class="calendar-day">8</button>
+                <button type="button" class="calendar-day">9</button>
+                <button type="button" class="calendar-day">10</button>
+                <button type="button" class="calendar-day">11</button>
+
+                <button type="button" class="calendar-day event-mark active">12</button>
+                <button type="button" class="calendar-day">13</button>
+                <button type="button" class="calendar-day">14</button>
+                <button type="button" class="calendar-day">15</button>
+                <button type="button" class="calendar-day">16</button>
+                <button type="button" class="calendar-day">17</button>
+                <button type="button" class="calendar-day">18</button>
+
+                <button type="button" class="calendar-day">19</button>
+                <button type="button" class="calendar-day">20</button>
+                <button type="button" class="calendar-day">21</button>
+                <button type="button" class="calendar-day">22</button>
+                <button type="button" class="calendar-day">23</button>
+                <button type="button" class="calendar-day">24</button>
+                <button type="button" class="calendar-day">25</button>
+
+                <button type="button" class="calendar-day">26</button>
+                <button type="button" class="calendar-day">27</button>
+                <button type="button" class="calendar-day">28</button>
+                <button type="button" class="calendar-day">29</button>
+                <button type="button" class="calendar-day">30</button>
+                <button type="button" class="calendar-day">31</button>
+                <button type="button" class="calendar-day muted">1</button>
+              </div>
             </div>
           </div>
         </section>
 
         <section class="candidates section-space" id="candidates">
           <div class="container">
-            <div class="section-head row-head reveal">
-              <span class="eyebrow eyebrow-soft">Candidates</span>
-              <h2>Meet the team.</h2>
+            <div class="section-head reveal">
+              <span class="eyebrow light">Candidates</span>
+              <h2>Meet the student leadership team.</h2>
             </div>
 
             <div class="candidate-grid">
@@ -169,6 +290,7 @@
                 <div class="candidate-meta">
                   <h3>Aria N.</h3>
                   <p>Team: Spark</p>
+                  <small>Student life and creativity</small>
                 </div>
               </article>
 
@@ -177,14 +299,16 @@
                 <div class="candidate-meta">
                   <h3>Jin C.</h3>
                   <p>Team: Bloom</p>
+                  <small>Wellbeing and support</small>
                 </div>
               </article>
 
-              <article class="candidate-card cyan reveal">
+              <article class="candidate-card blue reveal">
                 <div class="photo photo-three"><span>03</span></div>
                 <div class="candidate-meta">
                   <h3>Mina K.</h3>
                   <p>Team: Orbit</p>
+                  <small>Innovation and events</small>
                 </div>
               </article>
 
@@ -193,6 +317,7 @@
                 <div class="candidate-meta">
                   <h3>Leo R.</h3>
                   <p>Team: Pulse</p>
+                  <small>Academic development</small>
                 </div>
               </article>
 
@@ -201,63 +326,105 @@
                 <div class="candidate-meta">
                   <h3>Sora P.</h3>
                   <p>Team: Wave</p>
+                  <small>Campus engagement</small>
                 </div>
               </article>
 
-              <article class="candidate-card soft-purple reveal">
+              <article class="candidate-card lavender reveal">
                 <div class="photo photo-six"><span>06</span></div>
                 <div class="candidate-meta">
                   <h3>Hana T.</h3>
                   <p>Team: Nova</p>
+                  <small>Representation and advocacy</small>
                 </div>
               </article>
             </div>
           </div>
         </section>
 
-        <section class="profile section-space" id="profile">
-          <div class="container profile-shell reveal">
-            <div class="profile-visual">
-              <div class="profile-photo">
-                <div class="profile-head"></div>
-                <div class="profile-body"></div>
-              </div>
+        <section class="voice section-space" id="voice">
+          <div class="container voice-grid">
+            <div class="voice-copy reveal">
+              <span class="eyebrow light">Student Voice</span>
+              <h2>Share ideas, concerns, and feedback.</h2>
+              <p>
+                We are listening. Submit a suggestion or report a campus issue so the
+                council can respond with practical action.
+              </p>
+              <ul class="voice-points">
+                <li>Anonymous submissions available</li>
+                <li>Fast review by the council team</li>
+                <li>Topic-based tracking and updates</li>
+              </ul>
             </div>
 
-            <div class="profile-content">
-              <span class="eyebrow eyebrow-soft">Candidate Profile</span>
+            <form class="voice-form reveal" id="feedbackForm">
+              <label>
+                Full name
+                <input type="text" name="name" placeholder="Your name" required />
+              </label>
+              <label>
+                Student ID / email
+                <input type="email" name="email" placeholder="name@student.edu" required />
+              </label>
+              <label>
+                Category
+                <select name="category" required>
+                  <option value="Suggestion">Suggestion</option>
+                  <option value="Campus issue">Campus issue</option>
+                  <option value="Event request">Event request</option>
+                  <option value="General feedback">General feedback</option>
+                </select>
+              </label>
+              <label>
+                Message
+                <textarea name="message" rows="4" placeholder="Tell us your idea or concern..." required></textarea>
+              </label>
+              <button type="submit" class="primary-btn">Submit Feedback</button>
+              <p class="form-message" aria-live="polite"></p>
+            </form>
+          </div>
+        </section>
 
-              <div class="profile-header-row">
-                <h2>Aria N.</h2>
-                <span class="candidate-tag">Candidate No. 01</span>
-              </div>
+        <section class="admin section-space" id="admin">
+          <div class="container admin-shell">
+            <div class="section-head reveal">
+              <span class="eyebrow light">Admin Dashboard</span>
+              <h2>Internal council tools.</h2>
+            </div>
 
-              <p class="profile-intro">
-                A creative leader focused on building a campus community where
-                students feel heard, supported, and excited to participate.
-              </p>
+            <div class="admin-grid">
+              <form class="admin-login reveal" id="adminLoginForm">
+                <h3>Admin Login</h3>
+                <label>
+                  Email
+                  <input type="email" name="adminEmail" placeholder="admin@divizty.edu" required />
+                </label>
+                <label>
+                  Password
+                  <input type="password" name="adminPassword" placeholder="••••••••" required />
+                </label>
+                <button type="submit" class="secondary-btn">Access Dashboard</button>
+                <p class="admin-message" aria-live="polite"></p>
+              </form>
 
-              <div class="profile-boxes">
-                <div class="mini-box">
-                  <h3>Vision</h3>
-                  <p>
-                    To shape a student life that is inclusive, innovative, and
-                    full of joyful opportunities.
-                  </p>
+              <div class="dashboard reveal" id="adminDashboard">
+                <div class="dashboard-card">
+                  <span>Announcements</span>
+                  <strong>08</strong>
                 </div>
-                <div class="mini-box">
-                  <h3>Focus</h3>
-                  <p>
-                    Campus engagement, wellbeing support, and sustainable
-                    student development.
-                  </p>
+                <div class="dashboard-card">
+                  <span>Events</span>
+                  <strong>05</strong>
                 </div>
-              </div>
-
-              <div class="socials" aria-label="Social media placeholders">
-                <span>Instagram</span>
-                <span>TikTok</span>
-                <span>LinkedIn</span>
+                <div class="dashboard-card">
+                  <span>Feedback</span>
+                  <strong>24</strong>
+                </div>
+                <div class="dashboard-card">
+                  <span>Candidates</span>
+                  <strong>06</strong>
+                </div>
               </div>
             </div>
           </div>
@@ -271,31 +438,32 @@
               <span class="brand-mark">D</span>
               <span>DIVIZTY</span>
             </div>
-            <h3>Let’s make campus brighter.</h3>
+            <h3>Let’s make campus life better together.</h3>
           </div>
 
-          <div class="footer-links" aria-label="Social media links">
-            <a href="#">Instagram</a>
-            <a href="#">TikTok</a>
-            <a href="#">X</a>
+          <div class="footer-links" aria-label="Quick links">
+            <a href="#announcements">Announcements</a>
+            <a href="#events">Events</a>
+            <a href="#voice">Student Voice</a>
+            <a href="#admin">Admin</a>
           </div>
         </div>
       </footer>
 
-      <div class="chatbot-mockup" aria-label="Chatbot visual mockup">
+      <div class="chatbot-mockup" aria-label="Assistant chatbot">
         <button type="button" class="chatbot-button" aria-label="Open chatbot">
           <span>✦</span>
         </button>
 
-        <div class="chat-window" aria-label="Sample chatbot window">
+        <div class="chat-window" aria-label="Chatbot preview">
           <div class="chat-header">
             <span class="chat-dot"></span>
             <span class="chat-dot"></span>
             <span class="chat-dot"></span>
           </div>
           <div class="chat-body">
-            <div class="bubble bot">Hi! Want to know more about DIVIZTY?</div>
-            <div class="bubble user">Tell me about your policies!</div>
+            <div class="bubble bot">Hi! Need help finding the latest campus updates?</div>
+            <div class="bubble user">Show me the upcoming events.</div>
           </div>
         </div>
       </div>
